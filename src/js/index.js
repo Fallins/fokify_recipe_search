@@ -37,3 +37,15 @@ elements.searchForm.addEventListener('submit', e => {
     e.preventDefault()
     controlSearch()
 })
+
+elements.searchResPages.addEventListener('click', e => {
+    //closest 取得最接近 .btn-inline 的祖先元素
+    const btn = e.target.closest('.btn-inline')
+    console.log(btn)
+
+    if(btn) {
+        const goToPage = btn.dataset.goto
+        searchView.clearResults()
+        searchView.renderResults(goToPage)
+    }
+})
