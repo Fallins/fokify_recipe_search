@@ -11,7 +11,8 @@ const state = {}
 
 const controlSearch = async () => {
     // 1. get query from view
-    const query = searchView.getInput
+    const query = searchView.getInput()
+    console.log(query)
 
     if(query) {
         // 2. new search object and add to state
@@ -29,10 +30,11 @@ const controlSearch = async () => {
         // 5. render results on UI
         clearLoader()
         searchView.renderResults(state.search.result)
-        // console.log(state.search.result)
+        console.log(state.search.result)
         
     }
 }
+
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault()
     controlSearch()
@@ -42,10 +44,10 @@ elements.searchResPages.addEventListener('click', e => {
     //closest 取得最接近 .btn-inline 的祖先元素
     const btn = e.target.closest('.btn-inline')
     console.log(btn)
-
+    
     if(btn) {
         const goToPage = btn.dataset.goto
         searchView.clearResults()
-        searchView.renderResults(goToPage)
+        searchView.renderResults(state.search.result, goToPage)
     }
 })
