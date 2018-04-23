@@ -1,0 +1,17 @@
+[33mcommit a8c6adcc535546336366c764d1d86a0e5c2b674e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: SAPINFO\ben.liao <ben.liao@sapphireinfo.com.tw>
+Date:   Thu Apr 19 18:31:27 2018 +0800
+
+    setup webpack configuration
+
+[33mcommit 1017601f3f51a0db6ab8406ea05af182b09379da[m
+Author: SAPINFO\ben.liao <ben.liao@sapphireinfo.com.tw>
+Date:   Thu Apr 19 15:52:42 2018 +0800
+
+    commit with starter
+
+[33mcommit 2b7f730db2cf5fd36987723348e9a95409064f06[m
+Author: Fallins <vn518802@gmail.com>
+Date:   Thu Apr 19 15:46:55 2018 +0800
+
+    Initial commit
