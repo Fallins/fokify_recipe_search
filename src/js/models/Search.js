@@ -1,8 +1,5 @@
 import axios from 'axios'
-
-const PROXY = 'https://cors-anywhere.herokuapp.com/'
-const SEARCH_URL = 'http://food2fork.com/api/search'
-const KEY = 'f7eabbde5ccf27bcf1174a1e2fa38652'
+import { PROXY, SEARCH_URL, KEY } from '../config'
 
 export default class Search {
     constructor(query) {

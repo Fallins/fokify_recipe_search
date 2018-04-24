@@ -12,6 +12,14 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = ''
 }
 
+export const highlightSelected = id => {
+    const resultsArr = Array.from(document.querySelectorAll('.results__link'))
+    resultsArr.forEach( el => {
+        el.classList.remove('results__link--active')
+    })
+
+    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active')
+}
 
 // 判斷超過17個單字會加上...
 const limitRecipeTitle = (title, limit = 17) => {
@@ -32,7 +40,7 @@ const limitRecipeTitle = (title, limit = 17) => {
 const renderRecipe = recipe => {
     const markup = `
         <li>
-            <a class="results__link results__link--active" href="${recipe.recipe_id}">
+            <a class="results__link results__link--active" href="#${recipe.recipe_id}">
                 <figure class="results__fig">
                     <img src="${recipe.image_url}" alt="${recipe.title}">
                 </figure>
@@ -48,14 +56,14 @@ const renderRecipe = recipe => {
 }
 
 //type: 'prev' or 'next'
-const createButton = (page, type) => `
+const createButton = (page, type) => (`
     <button class="btn-inline results__btn--${type}" data-goto="${type === 'prev' ? +page - 1 : +page + 1}">
         <svg class="search__icon">
             <use href="img/icons.svg#icon-triangle-${type === 'prev' ? 'left' : 'right'}"></use>
         </svg>
         <span>Page ${type === 'prev' ? +page - 1 : +page + 1}</span>
     </button>
-    `
+`)
 
 const renderButtons = (page, numResults, resPerPage) => {
     const pages = Math.ceil(numResults / resPerPage)
